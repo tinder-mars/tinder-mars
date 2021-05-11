@@ -33,7 +33,7 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route
           path="/create-profile"
-          render={(props) => <CreateProfile setUser={setUser} />}
+          render={(props) => <CreateProfile {...props} setUser={setUser} />}
         />
         <Route
           path="/matchmaker"

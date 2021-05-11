@@ -1,17 +1,31 @@
 import React, { useState } from "react";
 
-const CreateProfile = ({ setUser }) => {
-  const [newUser, setNewUser] = useState({});
+const CreateProfile = ({ setUser, history }) => {
+  const defaultNewUser = {
+    name: "",
+    age: "",
+    location: "",
+    bio: "",
+  };
+
+  const [newUser, setNewUser] = useState(defaultNewUser);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setNewUser({ ...newUser, [name]: value });
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setUser(newUser);
+    setNewUser(defaultNewUser);
+    history.push("/matchmaker");
+  };
+
   return (
     <div>
       <h1>Create Profile</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
         <br />
         <input name="name" id="name" type="text" onChange={handleChange} />
@@ -31,7 +45,9 @@ const CreateProfile = ({ setUser }) => {
         <br />
         <label htmlFor="bio">Bio</label>
         <br />
-        <textarea name="bio" id="bio" type="text" onChange={handleChange} />
+        <textarea name="bio" id="bio" onChange={handleChange} />
+        <br />
+        <button type="submit">Create User</button>
       </form>
     </div>
   );
