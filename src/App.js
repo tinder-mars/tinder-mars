@@ -44,6 +44,7 @@ function App() {
               favourites={favourites}
               currentRobot={currentRobot}
               setCurrentRobot={setCurrentRobot}
+              user={user}
             />
           )}
         />

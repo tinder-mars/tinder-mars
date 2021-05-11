@@ -18,14 +18,9 @@ const MatchMaker = ({
   allRobots,
   currentRobot,
   setCurrentRobot,
+  user,
 }) => {
   const [isPopupDisplayed, setIsPopupDisplayed] = useState(false);
-  const showPopup = () => {
-    const currentRobotMatch = allRobots.find(
-      (robot, index) => index === currentRobot
-    );
-    console.log(currentRobotMatch);
-  };
 
   const moveForward = () => {
     setCurrentRobot(currentRobot + 1);
@@ -34,10 +29,26 @@ const MatchMaker = ({
   const moveForwardAndSetFavourite = (robot) => {
     setCurrentRobot(currentRobot + 1);
     setFavourites([...favourites, robot]);
+
+    if (robot.id % 2 === 0) {
+      setIsPopupDisplayed(true);
+    }
   };
 
   return (
     <div>
+      {isPopupDisplayed ? (
+        <div>
+          <p>It's a match</p>
+          <img
+            src={allRobots[currentRobot - 1].profile_image}
+            alt="match"
+            height="50"
+          />
+          <img src={user.profile_image} alt="match" height="50" />
+          <button onClick={() => setIsPopupDisplayed(false)}>&#10005;</button>
+        </div>
+      ) : null}
       {currentRobot <= 9 ? (
         allRobots
           .filter((item, index) => index === currentRobot)
