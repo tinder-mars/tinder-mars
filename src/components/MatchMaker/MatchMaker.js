@@ -1,18 +1,17 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 /*
-- map allRobots
-- render 1 Robot per page, currentRobot 
-- use the navbar
 
-1) on button (match or not match) pressed, currentRobot increases count (function that does that)
-2) filter comparing robot index with currentRobot
-3) the robot shown is the next one in line
-4)---link to match list 
+1) - create a state isPopupDisplayed (boolean)
+2) - if the robot id is divisable by 2 show popup
+3) - inject images from user and currentRobot
+4) - 'X' button to close the popup (isPopUpDisplayed set to false)
  
 
 
 */
+
 const MatchMaker = ({
   favourites,
   setFavourites,
@@ -20,6 +19,14 @@ const MatchMaker = ({
   currentRobot,
   setCurrentRobot,
 }) => {
+  const [isPopupDisplayed, setIsPopupDisplayed] = useState(false);
+  const showPopup = () => {
+    const currentRobotMatch = allRobots.find(
+      (robot, index) => index === currentRobot
+    );
+    console.log(currentRobotMatch);
+  };
+
   const moveForward = () => {
     setCurrentRobot(currentRobot + 1);
   };

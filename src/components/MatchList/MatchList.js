@@ -3,6 +3,7 @@
 */
 
 import { Link } from "react-router-dom";
+import lonely_robot from "../assets/lonely_robot.svg";
 
 const MatchList = ({ favourites }) => {
   return (
@@ -17,7 +18,11 @@ const MatchList = ({ favourites }) => {
           </div>
         ))
       ) : (
-        <h1>You have no matches yet!</h1>
+        <div>
+          <h1>You have no matches yet!</h1>
+          <br />
+          <img src={lonely_robot} alt="lonely_robot" height="80" />
+        </div>
       )}
     </div>
   );
