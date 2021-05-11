@@ -1,12 +1,23 @@
-.homepage-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
+.homepage-logo {
+  width: 350px;
+  height: 350px;
+  margin: auto;
+  margin-top: 13vh;
+  display: block;
 }
-
-.homepage-inner-container {
-  display: flex;
-  flex-direction: column;
+.homepage-button {
+  display: block;
+  margin: auto;
+  border-radius: 50px;
+  width: 183px;
+  height: 76px;
+  background: #d61120;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  line-height: 76px;
+  font-size: 25px;
+  font-weight: 700;
+  margin-top: 110px;
+  text-transform: uppercase;
 }
