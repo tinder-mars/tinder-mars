@@ -23,35 +23,33 @@ function App() {
   const fetchRobots = () => {
     axios
       .get("./Data.json")
-      .then((response) => console.log(response.data.robots))
+      .then((response) => setAllRobots(response.data.robots))
       .catch((error) => console.log(error));
   };
 
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/tinder-mars" render={(props) => <HomePage />} />
+        <Route exact path="/" render={(props) => <HomePage />} />
+        <Route path="/create-profile" render={(props) => <CreateProfile />} />
         <Route
-          path="/tinder-mars/create-profile"
-          render={(props) => <CreateProfile />}
-        />
-        <Route
-          path="/tinder-mars/matchmaker"
+          path="/matchmaker"
           render={(props) => (
             <MatchMaker
               allRobots={allRobots}
               setFavourites={setFavourites}
+              favourites={favourites}
               currentRobot={currentRobot}
               setCurrentRobot={setCurrentRobot}
             />
           )}
         />
         <Route
-          path="/tinder-mars/matchlist"
-          render={(props) => <MatchList />}
+          path="/matchlist"
+          render={(props) => <MatchList favourites={favourites} />}
         />
-        <Route path="/tinder-mars/chat" render={(props) => <Chat />} />
-        <Redirect to="/tinder-mars" />
+        <Route path="/chat" render={(props) => <Chat />} />
+        <Redirect to="/" />
       </Switch>
     </div>
   );
