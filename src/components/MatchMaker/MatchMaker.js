@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 1) on button (match or not match) pressed, currentRobot increases count (function that does that)
 2) filter comparing robot index with currentRobot
 3) the robot shown is the next one in line
+4)---link to match list 
  
 
 
@@ -49,7 +50,7 @@ const MatchMaker = ({
       ) : (
         <h1>NO MORE ROBOTS AROUND YOU!</h1>
       )}
-      <Link to="/matchlist">Go to the favourite list</Link>
+      <Link to="/matchlist">Go to the favourite list :)</Link>
     </div>
   );
 };
