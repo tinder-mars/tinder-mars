@@ -1,5 +1,5 @@
 const MatchList = () => {
-  return <div></div>;
+  return <div>Match List</div>;
 };
 
 export default MatchList;

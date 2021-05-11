@@ -1,5 +1,5 @@
 const MatchMaker = () => {
-  return <div></div>;
+  return <div>Match Maker</div>;
 };
 
 export default MatchMaker;
