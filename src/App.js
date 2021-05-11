@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/" render={(props) => <HomePage />} />
+        <Route exact path="/" component={HomePage} />
         <Route path="/create-profile" render={(props) => <CreateProfile />} />
         <Route
           path="/matchmaker"
