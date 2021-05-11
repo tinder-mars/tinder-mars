@@ -55,7 +55,12 @@ function App() {
         <Route
           path="/chat/:id"
           render={(props) => (
-            <Chat {...props} favourites={favourites} user={user} />
+            <Chat
+              {...props}
+              setFavourites={setFavourites}
+              favourites={favourites}
+              user={user}
+            />
           )}
         />
         <Redirect to="/" />
