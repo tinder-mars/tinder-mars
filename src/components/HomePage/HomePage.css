@@ -1,0 +1,12 @@
+.homepage-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.homepage-inner-container {
+  display: flex;
+  flex-direction: column;
+}

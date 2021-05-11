@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import lonely_robot from "../assets/lonely_robot.svg";
 
 /*
 
@@ -66,7 +67,11 @@ const MatchMaker = ({
             </div>
           ))
       ) : (
-        <h1>NO MORE ROBOTS AROUND YOU!</h1>
+        <div>
+          <h1>NO MORE ROBOTS AROUND YOU!</h1>
+          <br />
+          <img src={lonely_robot} alt="lonely_robot" height="80" />
+        </div>
       )}
       <Link to="/matchlist">Go to the match list</Link>
     </div>

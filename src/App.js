@@ -52,7 +52,17 @@ function App() {
           path="/matchlist"
           render={(props) => <MatchList favourites={favourites} />}
         />
-        <Route path="/chat/:id" render={(props) => <Chat {...props} />} />
+        <Route
+          path="/chat/:id"
+          render={(props) => (
+            <Chat
+              {...props}
+              setFavourites={setFavourites}
+              favourites={favourites}
+              user={user}
+            />
+          )}
+        />
         <Redirect to="/" />
       </Switch>
     </div>
