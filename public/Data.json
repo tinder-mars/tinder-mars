@@ -1,0 +1,84 @@
+{
+  "robots": [
+    {
+      "id": 1,
+      "name": "TRON",
+      "age": 1000,
+      "bio": "Life Achievements: Never been to jail before (except when playing monopoly).",
+      "location": "Planet C-137",
+      "profile_image": "https://robohash.org/laborumnecessitatibusdeleniti.bmp?size=200x200&set=set1"
+    },
+    {
+      "id": 2,
+      "name": "Cindy Johnson",
+      "age": 40,
+      "bio": "Married. Couple of kids. Looking for some side action. Just kidding. Single. 3 tamagotchis. Looking for someone to bring to family events so they'll stop thinking something is wrong with me.",
+      "location": "Saturn",
+      "profile_image": "https://robohash.org/PFI.png?set=set2&size=200x200"
+    },
+    {
+      "id": 3,
+      "name": "Molter Bot",
+      "age": 100,
+      "bio": "If you can't laugh at yourself, I probably will.",
+      "location": "Delta",
+      "profile_image": "https://robohash.org/earumdoloremquenecessitatibus.jpg?size=200x200&set=set1"
+    },
+    {
+      "id": 4,
+      "name": "Mini Rover 5000",
+      "age": 500,
+      "bio": "Current Relationship Status: Made dinner for two, ate both.",
+      "location": "Mars",
+      "profile_image": "https://robohash.org/omnisdolorsunt.bmp?size=200x200&set=set1"
+    },
+    {
+      "id": 5,
+      "name": "Alexa Davies",
+      "age": 24,
+      "bio": "No I will not play despacito.",
+      "location": "Pluto",
+      "profile_image": "https://robohash.org/OV6.png?set=set2&size=200x200"
+    },
+    {
+      "id": 6,
+      "name": "Brett Jones",
+      "age": 34,
+      "bio": "Unemployed but I make a really good macaroni and cheese.",
+      "location": "Earth",
+      "profile_image": "https://robohash.org/quisnequeexplicabo.jpg?size=200x200&set=set1"
+    },
+    {
+      "id": 7,
+      "name": "Jane Mogford",
+      "age": 340,
+      "bio": "2nd year Psychology student, so I can read your mind. Watch out!",
+      "location": "Wallis 78",
+      "profile_image": "https://robohash.org/inventoreaspernaturfacilis.png?size=200x200&set=set1"
+    },
+    {
+      "id": 8,
+      "name": "MC Richard",
+      "age": 49,
+      "bio": "I am arguable the best DJ on Mars.",
+      "location": "Mars",
+      "profile_image": "https://robohash.org/consequaturvoluptatepariatur.png?size=200x200&set=set1"
+    },
+    {
+      "id": 9,
+      "name": "Mr Wordlwide",
+      "age": 96,
+      "bio": "Probably just going to delete the app tomorrow.",
+      "location": "Earth 34",
+      "profile_image": "https://robohash.org/1MU.png?set=set2&size=200x200"
+    },
+    {
+      "id": 10,
+      "name": "WALL-E",
+      "age": 19,
+      "bio": "Disney Child Superstar",
+      "location": "Earth",
+      "profile_image": "https://static.wikia.nocookie.net/pixar/images/1/1a/WALL%E2%80%A2E.png/revision/latest?cb=20191130002718&path-prefix=pt"
+    }
+  ]
+}
