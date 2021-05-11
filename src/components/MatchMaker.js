@@ -1,5 +1,5 @@
-const MatcheMaker = () => {
+const MatchMaker = () => {
   return <div></div>;
 };
 
-export default MatcheMaker;
+export default MatchMaker;
