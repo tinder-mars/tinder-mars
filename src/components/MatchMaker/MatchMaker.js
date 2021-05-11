@@ -28,10 +28,10 @@ const MatchMaker = ({
 
   const moveForwardAndSetFavourite = (robot) => {
     setCurrentRobot(currentRobot + 1);
-    setFavourites([...favourites, robot]);
 
     if (robot.id % 2 === 0) {
       setIsPopupDisplayed(true);
+      setFavourites([...favourites, robot]);
     }
   };
 
@@ -68,7 +68,7 @@ const MatchMaker = ({
       ) : (
         <h1>NO MORE ROBOTS AROUND YOU!</h1>
       )}
-      <Link to="/matchlist">Go to the favourite list :)</Link>
+      <Link to="/matchlist">Go to the match list</Link>
     </div>
   );
 };
