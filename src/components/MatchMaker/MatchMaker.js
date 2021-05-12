@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import lonely_robot from "../assets/lonely_robot.svg";
+import "./MatchMaker.css";
+import matchmaker from "../assets/matchmaker.svg";
+import no from "../assets/no.svg";
+import yes from "../assets/yes.svg";
 
 /*
 
@@ -39,41 +43,86 @@ const MatchMaker = ({
   return (
     <div>
       {isPopupDisplayed ? (
-        <div>
-          <p>It's a match</p>
-          <img
-            src={allRobots[currentRobot - 1].profile_image}
-            alt="match"
-            height="50"
-          />
-          <img src={user.profile_image} alt="match" height="50" />
-          <button onClick={() => setIsPopupDisplayed(false)}>&#10005;</button>
+        <div className="matchmaker-popup-container">
+          <div className="matchmaker-popup-inner-container">
+            <p className="matchmaker-itsamatch">It's a Match!</p>
+            <p className="matchmaker-itsamatch-text">
+              You and {allRobots[currentRobot - 1].name} have liked eachother
+            </p>
+            <div className="matchmaker-profiles-images">
+              <img src={user.profile_image} alt="match" height="50" className="matchmaker-user-profile-image"/>
+              <img
+                src={allRobots[currentRobot - 1].profile_image}
+                alt="match"
+                height="50"
+                className="matchmaker-robot-profile-image"
+              />
+            </div>
+
+            <button onClick={() => setIsPopupDisplayed(false)} className="matchmaker-closepopup-button">X</button>
+          </div>
         </div>
       ) : null}
       {currentRobot <= 9 ? (
         allRobots
           .filter((item, index) => index === currentRobot)
           .map((robot) => (
-            <div key={robot.id}>
-              <img src={robot.profile_image} alt={robot.name} height="80" />
-              <h2>{robot.name}</h2>
-              <h3>{robot.age}</h3>
-              <h3>{robot.bio}</h3>
-              <h3>{robot.location}</h3>
-              <button onClick={moveForward}>&#128148;</button>
-              <button onClick={() => moveForwardAndSetFavourite(robot)}>
-                &#128151;
-              </button>
+            <div className="matchmaker-parent-container">
+              <div key={robot.id} className="matchmaker-child-container">
+                <img
+                  src={matchmaker}
+                  alt="matchmaker"
+                  className="matchmaker-logo"
+                />
+                <div className="matchmaker-profile-image-container">
+                  <img
+                    src={robot.profile_image}
+                    alt={robot.name}
+                    className="matchmaker-profile-image"
+                  />
+                </div>
+                <div className="matchmaker-robot-data-container">
+                  <h2 className="matchmaker-name-age">
+                    {robot.name}, {robot.age} years old
+                  </h2>
+                  <h3 className="matchmaker-location">
+                    Location: {robot.location}
+                  </h3>
+                  <h3 className="matchmaker-bio">"{robot.bio}"</h3>
+                </div>
+
+                <div className="matchmaker-buttons">
+                  <img
+                    onClick={moveForward}
+                    src={no}
+                    className="no_button"
+                  ></img>
+                  <img
+                    onClick={() => moveForwardAndSetFavourite(robot)}
+                    src={yes}
+                    className="yes_button"
+                  ></img>
+                </div>
+              </div>
             </div>
           ))
       ) : (
-        <div>
-          <h1>NO MORE ROBOTS AROUND YOU!</h1>
+        <div className="matchmaker-nomorerobots-container">
+          <img
+                  src={matchmaker}
+                  alt="matchmaker"
+                  className="matchmaker-logo"
+                />
+          <h1 className="matchmaker-nomorerobots-text">No more robots around you!</h1>
           <br />
-          <img src={lonely_robot} alt="lonely_robot" height="80" />
+          <img src={lonely_robot} alt="lonely_robot" className="matchmaker-nomorerobots-robot"/>
         </div>
       )}
-      <Link to="/matchlist">Go to the match list</Link>
+      <div className="matchmaker-gotomatchlist-button-container">
+        <Link to="/matchlist" className="matchmaker-gotomatchlist-button">
+          Go to the match list
+        </Link>
+      </div>
     </div>
   );
 };
