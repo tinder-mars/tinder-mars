@@ -33,6 +33,12 @@ const MatchList = ({ favourites }) => {
           </div>
         )}
       </div>
+      <div className='button'>
+        <Link to="/matchmaker" className="matchmaker-gotomatchmaker-button">
+          Go to the Match Maker
+        </Link>
+      </div>
+      
     </div>
   );
 };
