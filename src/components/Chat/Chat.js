@@ -26,7 +26,7 @@ const Chat = ({ user, favourites, match, setFavourites }) => {
               currentMessage,
               {
                 profile_image: item.profile_image,
-                currentMessage: "hello mars",
+                currentMessage: Math.random().toString(36).substring(7),
               },
             ],
           }
