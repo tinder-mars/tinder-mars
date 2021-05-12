@@ -31,9 +31,12 @@ a {
 }
 
 .matchlist_image {
+  margin: auto;
   height: 8vh;
   margin-top: 8vh;
   margin-bottom: 40px;
+  width: 116px;
+  display: block;
 }
 
 .No_Match_message {
@@ -64,4 +67,8 @@ a {
   padding: 10px 25px;
   font-size: 20px;
   font-weight: 600;
+  display: block;
+  margin: auto;
+  width: 260px;
+  line-height: 40px;
 }
