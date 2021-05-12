@@ -1,0 +1,99 @@
+.chat-container {
+  height: 100vh;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.chat-left-arrow {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.chat-left-arrow-img {
+  width: 30px;
+  height: auto;
+}
+
+.chat-matchchat-container {
+  text-align: center;
+  margin-top: 8vh;
+}
+
+.chat-matchchat-img {
+  height: 70px;
+  width: auto;
+}
+
+.chat-bubbles {
+  margin-top: 30px;
+  height: 480px;
+  overflow: scroll;
+}
+
+.chat-bubbles-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.chat-bubbles-container-robot {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin-top: 20px;
+}
+
+.chat-bubbles-profile-image {
+  width: 50px;
+  clip-path: circle(50% at 50% 50%);
+}
+
+.chat-bubbles-profile-image img {
+  height: auto;
+  width: 100%;
+}
+
+.chat-bubbles-profile-current-message {
+  padding: 15px;
+  border-radius: 10px;
+  width: 61%;
+}
+
+.chat-bubbles-profile-current-message-user {
+  background-color: #e67079;
+  color: white;
+  margin-left: 15px;
+}
+
+.chat-bubbles-profile-current-message-robot {
+  background-color: #b8def3;
+  color: black;
+  margin-right: 15px;
+}
+
+.chat-form {
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  padding: 0 10%;
+}
+
+.chat-form-textarea {
+  width: 100%;
+  border: 1px solid #d61120;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.chat-form-button {
+  margin-top: 15px;
+  color: white;
+  background-color: #d61120;
+  border-radius: 50px;
+  padding: 15px 20px;
+  border: none;
+  font-size: 20px;
+}

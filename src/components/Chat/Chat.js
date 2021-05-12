@@ -1,10 +1,8 @@
-// 1) when a user submits a message  we add message to messages aray for that favourite
-//2) a random message from the robot will be added to the messsages aray from that favourite
-//3) repete steps one and two
-//4)
-//5)
-
+import "./chat.css";
 import { useState } from "react";
+import matchchat from "../assets/matchchat.svg";
+import RedArrowLeft from "../assets/RedArrowLeft.svg";
+import { Link } from "react-router-dom";
 
 const Chat = ({ user, favourites, match, setFavourites }) => {
   const [currentMessage, setCurrentMessage] = useState({
@@ -39,32 +37,60 @@ const Chat = ({ user, favourites, match, setFavourites }) => {
     setFavourites(newFavouritesList);
   };
   return (
-    <div>
-      <h1>Chat </h1>
+    <div className="chat-container">
+      <Link to="/matchlist" className="chat-left-arrow">
+        <img
+          className="chat-left-arrow-img"
+          src={RedArrowLeft}
+          alt="Go back to match list"
+        />
+      </Link>
+      <div className="chat-matchchat-container">
+        <img src={matchchat} alt="Match chat" className="chat-matchchat-img" />
+      </div>
       {favourites
         .filter((robot) => robot.id === Number(match.params.id))
         .map((item) => (
-          <div>
-            <h1>{item.name}</h1>
-            {item.messages.map((message) => (
-              <div>
-                <h1>{message.currentMessage}</h1>
-                <img src={message.profile_image} alt="Profile image" />
-              </div>
-            ))}
+          <div className="chat-bubbles">
+            {item.messages.map((message, index) => {
+              return index % 2 === 0 ? (
+                <div className="chat-bubbles-container">
+                  <div className="chat-bubbles-profile-image">
+                    <img src={message.profile_image} alt="Profile image" />
+                  </div>
+                  <div className="chat-bubbles-profile-current-message chat-bubbles-profile-current-message-user">
+                    <h1>{message.currentMessage}</h1>
+                  </div>
+                </div>
+              ) : (
+                <div className="chat-bubbles-container-robot">
+                  <div className="chat-bubbles-profile-image">
+                    <img src={message.profile_image} alt="Profile image" />
+                  </div>
+                  <div className="chat-bubbles-profile-current-message chat-bubbles-profile-current-message-robot">
+                    <h1>{message.currentMessage}</h1>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         ))}
-      <form onSubmit={handleSubmit}>
-        <textarea
-          name="currentMessage"
-          id="currentMessage"
-          placeholder="type in message"
-          value={currentMessage.currentMessage}
-          onChange={handleChange}
-        />
-        <br />
-        <button type="submit">Send Message</button>
-      </form>
+      <div className="chat-form">
+        <form onSubmit={handleSubmit}>
+          <textarea
+            className="chat-form-textarea"
+            name="currentMessage"
+            id="currentMessage"
+            placeholder="type in message"
+            value={currentMessage.currentMessage}
+            onChange={handleChange}
+          />
+          <br />
+          <button className="chat-form-button" type="submit">
+            Send Message
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
