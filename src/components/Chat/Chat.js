@@ -86,7 +86,11 @@ const Chat = ({ user, favourites, match, setFavourites }) => {
             onChange={handleChange}
           />
           <br />
-          <button className="chat-form-button" type="submit">
+          <button
+            disabled={currentMessage.currentMessage === "" ? true : false}
+            className="chat-form-button"
+            type="submit"
+          >
             Send Message
           </button>
         </form>
