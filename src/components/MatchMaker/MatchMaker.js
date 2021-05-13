@@ -51,8 +51,8 @@ const MatchMaker = ({
             </p>
             <div className="matchmaker-profiles-images">
               <img
-                src={user.profile_image}
-                alt={uploadimage}
+                src={user.profile_image || uploadimage}
+                alt="User"
                 height="50"
                 className="matchmaker-user-profile-image"
               />
