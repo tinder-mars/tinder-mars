@@ -5,7 +5,7 @@ import "./MatchMaker.css";
 import matchmaker from "../assets/matchmaker.svg";
 import no from "../assets/no.svg";
 import yes from "../assets/yes.svg";
-
+import uploadimage from "../assets/uploadimage.svg";
 /*
 
 1) - create a state isPopupDisplayed (boolean)
@@ -52,7 +52,7 @@ const MatchMaker = ({
             <div className="matchmaker-profiles-images">
               <img
                 src={user.profile_image}
-                alt="match"
+                alt={uploadimage}
                 height="50"
                 className="matchmaker-user-profile-image"
               />
