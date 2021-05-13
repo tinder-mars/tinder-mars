@@ -26,7 +26,7 @@ const Chat = ({ user, favourites, match, setFavourites }) => {
               currentMessage,
               {
                 profile_image: item.profile_image,
-                currentMessage: Math.random().toString(36).substring(7),
+                robotMessage: Math.random().toString(36).substring(7),
               },
             ],
           }
@@ -51,10 +51,10 @@ const Chat = ({ user, favourites, match, setFavourites }) => {
       {favourites
         .filter((robot) => robot.id === Number(match.params.id))
         .map((item) => (
-          <div className="chat-bubbles">
+          <div key={item.id} className="chat-bubbles">
             {item.messages.map((message, index) => {
               return index % 2 === 0 ? (
-                <div className="chat-bubbles-container">
+                <div key={index} className="chat-bubbles-container">
                   <div className="chat-bubbles-profile-image">
                     <img src={message.profile_image} alt="Profile image" />
                   </div>
@@ -63,12 +63,12 @@ const Chat = ({ user, favourites, match, setFavourites }) => {
                   </div>
                 </div>
               ) : (
-                <div className="chat-bubbles-container-robot">
+                <div key={index} className="chat-bubbles-container-robot">
                   <div className="chat-bubbles-profile-image">
                     <img src={message.profile_image} alt="Profile image" />
                   </div>
                   <div className="chat-bubbles-profile-current-message chat-bubbles-profile-current-message-robot">
-                    <h1>{message.currentMessage}</h1>
+                    <h1>{message.robotMessage}</h1>
                   </div>
                 </div>
               );
