@@ -56,7 +56,7 @@ const Chat = ({ user, favourites, match, setFavourites }) => {
               return index % 2 === 0 ? (
                 <div key={index} className="chat-bubbles-container">
                   <div className="chat-bubbles-profile-image">
-                    <img src={message.profile_image} alt="Profile image" />
+                    <img src={message.profile_image} alt="Profile" />
                   </div>
                   <div className="chat-bubbles-profile-current-message chat-bubbles-profile-current-message-user">
                     <h1>{message.currentMessage}</h1>
@@ -65,7 +65,7 @@ const Chat = ({ user, favourites, match, setFavourites }) => {
               ) : (
                 <div key={index} className="chat-bubbles-container-robot">
                   <div className="chat-bubbles-profile-image">
-                    <img src={message.profile_image} alt="Profile image" />
+                    <img src={message.profile_image} alt="Profile" />
                   </div>
                   <div className="chat-bubbles-profile-current-message chat-bubbles-profile-current-message-robot">
                     <h1>{message.robotMessage}</h1>

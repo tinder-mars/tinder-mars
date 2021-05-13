@@ -51,7 +51,7 @@ const CreateProfile = ({ setUser, history }) => {
       ) : (
         <img
           src={newUser.profile_image}
-          alt="image"
+          alt="profile"
           onClick={() => setIsImageFormDisplayed(true)}
           height="80"
           className="create-profile-image"

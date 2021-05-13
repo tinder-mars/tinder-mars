@@ -50,7 +50,12 @@ const MatchMaker = ({
               You and {allRobots[currentRobot - 1].name} have liked eachother
             </p>
             <div className="matchmaker-profiles-images">
-              <img src={user.profile_image} alt="match" height="50" className="matchmaker-user-profile-image"/>
+              <img
+                src={user.profile_image}
+                alt="match"
+                height="50"
+                className="matchmaker-user-profile-image"
+              />
               <img
                 src={allRobots[currentRobot - 1].profile_image}
                 alt="match"
@@ -59,7 +64,12 @@ const MatchMaker = ({
               />
             </div>
 
-            <button onClick={() => setIsPopupDisplayed(false)} className="matchmaker-closepopup-button">X</button>
+            <button
+              onClick={() => setIsPopupDisplayed(false)}
+              className="matchmaker-closepopup-button"
+            >
+              X
+            </button>
           </div>
         </div>
       ) : null}
@@ -95,11 +105,13 @@ const MatchMaker = ({
                   <img
                     onClick={moveForward}
                     src={no}
+                    alt="no_button"
                     className="no_button"
                   ></img>
                   <img
                     onClick={() => moveForwardAndSetFavourite(robot)}
                     src={yes}
+                    alt="yes_button"
                     className="yes_button"
                   ></img>
                 </div>
@@ -108,14 +120,16 @@ const MatchMaker = ({
           ))
       ) : (
         <div className="matchmaker-nomorerobots-container">
-          <img
-                  src={matchmaker}
-                  alt="matchmaker"
-                  className="matchmaker-logo"
-                />
-          <h1 className="matchmaker-nomorerobots-text">No more robots around you!</h1>
+          <img src={matchmaker} alt="matchmaker" className="matchmaker-logo" />
+          <h1 className="matchmaker-nomorerobots-text">
+            No more robots around you!
+          </h1>
           <br />
-          <img src={lonely_robot} alt="lonely_robot" className="matchmaker-nomorerobots-robot"/>
+          <img
+            src={lonely_robot}
+            alt="lonely_robot"
+            className="matchmaker-nomorerobots-robot"
+          />
         </div>
       )}
       <div className="matchmaker-gotomatchlist-button-container">

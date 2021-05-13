@@ -10,7 +10,7 @@ import matchlist_image from "../assets/matchlist.svg";
 const MatchList = ({ favourites }) => {
   return (
     <div>
-      <img src={matchlist_image} className='matchlist_image'/>
+      <img src={matchlist_image} className="matchlist_image" alt="title" />
       <div className="list_container">
         {favourites.length ? (
           favourites.map((item) => (
@@ -27,18 +27,21 @@ const MatchList = ({ favourites }) => {
           ))
         ) : (
           <div>
-            <h1 className='No_Match_message'>You have no matches yet!</h1>
+            <h1 className="No_Match_message">You have no matches yet!</h1>
             <br />
-            <img src={lonely_robot} alt="lonely_robot" className='lonely_robot'/>
+            <img
+              src={lonely_robot}
+              alt="lonely_robot"
+              className="lonely_robot"
+            />
           </div>
         )}
       </div>
-      <div className='button'>
+      <div className="button">
         <Link to="/matchmaker" className="matchmaker-gotomatchmaker-button">
           Go to the Match Maker
         </Link>
       </div>
-      
     </div>
   );
 };
